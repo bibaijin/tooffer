@@ -39,22 +39,3 @@ func TestSearch(t *testing.T) {
 		}
 	}
 }
-
-func TestSpaceEscape(t *testing.T) {
-	cases := []struct {
-		in   string
-		want string
-	}{
-		{
-			"We are happy.",
-			"We%20are%20happy.",
-		},
-	}
-
-	for _, c := range cases {
-		got := SpaceEscape(c.in)
-		if got != c.want {
-			t.Errorf("SpaceEscape failed, want: %s, got: %s.", c.want, got)
-		}
-	}
-}
