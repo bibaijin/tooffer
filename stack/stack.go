@@ -24,6 +24,10 @@ func (s *sliceStack) Push(v interface{}) {
 }
 
 func (s *sliceStack) Pop() (x interface{}) {
+	if s.IsEmpty() {
+		return nil
+	}
+
 	x, s.slice = s.slice[len(s.slice)-1], s.slice[:len(s.slice)-1]
 	return x
 }
